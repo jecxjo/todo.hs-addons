@@ -1,0 +1,21 @@
+#!/bin/sh
+
+TAG="gh"
+DOMAIN_URL="https:\/\/github.com"
+LAUNCH_CMD="open"
+
+usage() {
+  echo "Usage: todo github <task>"
+  exit 1
+}
+
+launch_browser() {
+  echo "Opening $1"
+  "${LAUNCH_CMD}" "$1"
+}
+
+test $# == 1 || usage
+
+SED_CMD="s/^.*${TAG}:\([-/a-zA-Z0-9]*\).*$/${DOMAIN_URL}\/\1/"
+URL=$(awk -v idx="$1" 'NR==idx' "${TODO_PATH}" | grep "${TAG}:" | sed -e "${SED_CMD}")
+test -z "${URL}" || launch_browser "${URL}"
