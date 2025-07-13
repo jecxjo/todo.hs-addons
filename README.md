@@ -1,6 +1,8 @@
 # todo.hs-addons
 Addons for todo.hs
 
+**NOTE** LEAVING GITHUB!!! This project is now located at https://git.sh0.xyz/todo-hs-addons.git/
+
 See [jecxjo/todo.hs](https://github.com/jecxjo/todo.hs) for my todo.txt app.
 
 ## List of Addons
